@@ -28,3 +28,9 @@ Icon
 Network Trash Folder
 Temporary Items
 .apdisk
+
+# Ignore audio files in the resources directory, but keep the directories
+configs/resources/audio/our_model/*
+configs/resources/audio/other_model/*
+configs/resources/audio/hidden_original/*
+
