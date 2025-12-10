@@ -80,11 +80,11 @@ pages:
       content: Proszę ocenić jakość dźwięku próbek.
       showWaveform: false
       enableLooping: true
-      reference: configs/resources/audio/hidden_original/PF_0_emo.wav
+      reference: configs/resources/audio/mono_ref.wav
       createAnchor35: true
       stimuli:
-          OurModel: configs/resources/audio/our_model/PF_0_emo.wav
-          OtherModel: configs/resources/audio/anchor/PF_0_emo_anchor.wav
+          OurModel: configs/resources/audio/mono_c1.wav
+          OtherModel: configs/resources/audio/mono_c2.wav
 
     - type: mushra
       id: trial_2
