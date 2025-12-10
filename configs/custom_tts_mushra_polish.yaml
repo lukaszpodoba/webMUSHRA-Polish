@@ -63,7 +63,7 @@ pages:
       reference: configs/resources/audio/mono_ref.wav
       createAnchor35: true # Automatically create a low-quality anchor for training
       stimuli:
-        "Synteza 1": configs/resources/audio/mono_c1.wav                  │
+        "Synteza 1": configs/resources/audio/mono_c1.wav
         "Synteza 2": configs/resources/audio/mono_c2.wav
 
     # --- 5. Start of the Actual Test ---
@@ -78,7 +78,7 @@ pages:
       id: trial_1
       name: Ocena - Próbka 1
       content: Proszę ocenić jakość dźwięku próbek.
-      # showWaveform: true
+      showWaveform: false
       enableLooping: true
       reference: configs/resources/audio/hidden_original/PF_0_emo.wav
       createAnchor35: true
@@ -90,7 +90,7 @@ pages:
       id: trial_2
       name: Ocena - Próbka 2
       content: Proszę ocenić jakość dźwięku próbek.
-      showWaveform: true
+      showWaveform: false
       enableLooping: true
       reference: configs/resources/audio/mono_ref.wav
       createAnchor35: true
@@ -106,6 +106,13 @@ pages:
       showResults: false # Hides the detailed results from the participant
       writeResults: true
       questionnaire:
+          - type: select
+            label: Proszę wybrać swoją płeć
+            name: gender
+            options:
+              - Mężczyzna
+              - Kobieta
+            optional: false
           - type: number
             label: Proszę podać swój wiek
             name: age

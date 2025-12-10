@@ -225,7 +225,7 @@ var configFile = '';
 if (configArg) {
   configFile = 'configs/' + configArg;
 } else {
-  configFile = 'configs/tts_mushra_advanced_pl.yaml';
+  configFile = 'configs/custom_tts_mushra_polish.yaml';
 }
 
 
