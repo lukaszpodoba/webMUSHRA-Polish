@@ -179,14 +179,14 @@ function startup(config) {
     }
   }, true);
 
-  try {
+  /* try {
     audioContext.destination.channelCountMode = "explicit";
     audioContext.destination.channelInterpretation = "discrete";
     audioContext.destination.channelCount = audioContext.destination.maxChannelCount;
   } catch (e) {
     console.log("webMUSHRA: Could not set channel count of destination node.");
     console.log(e);
-  }
+  } */
   audioContext.volume = 1.0;
 
   audioFileLoader = new AudioFileLoader(audioContext, errorHandler);
@@ -225,7 +225,7 @@ var configFile = '';
 if (configArg) {
   configFile = 'configs/' + configArg;
 } else {
-  configFile = 'configs/default.yaml';
+  configFile = 'configs/tts_mushra_advanced_pl.yaml';
 }
 
 

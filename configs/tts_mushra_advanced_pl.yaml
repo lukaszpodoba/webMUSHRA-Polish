@@ -1,0 +1,118 @@
+#
+# Advanced MUSHRA Configuration for TTS Evaluation (Polish version)
+#
+testname: Zaawansowana Ocena TTS MUSHRA
+testId: tts_mushra_advanced_pl
+language: 'pl'
+bufferSize: 4096 # Increased buffer size for potentially larger audio files
+stopOnErrors: true
+showButtonPreviousPage: true
+remoteService: service/write.php # Enable this and 'writeResults: true' on the finish page to save data
+
+pages:
+    # --- 1. Welcome Page ---
+    - type: generic
+      id: welcome
+      name: Witaj w teście odsłuchowym
+      content: |
+        <p>W tym eksperymencie ocenisz jakość kilku próbek audio wygenerowanych przez systemy syntezy mowy (TTS).</p>
+        <p>Prosimy o używanie wysokiej jakości słuchawek i upewnienie się, że znajdujesz się w cichym otoczeniu.</p>
+
+    # --- 2. Consent Form ---
+    - type: consent
+      id: consent_page
+      name: Formularz zgody
+      mustConsent: true # User must agree to continue
+      content: |
+        <p>Za chwilę weźmiesz udział w teście odsłuchowym w celach badawczych.</p>
+        <p>Twoje anonimowe odpowiedzi zostaną zebrane i wykorzystane do oceny jakości dźwięku. Żadne dane osobowe nie będą przechowywane.</p>
+        <p>Klikając "Zgadzam się", potwierdzasz, że przeczytałeś/aś i zrozumiałeś/aś te informacje oraz wyrażasz zgodę na udział w badaniu.</p>
+
+    # --- 3. Volume Adjustment Page ---
+    - type: volume
+      id: volume_adjustment
+      name: Ustawienia głośności
+      content: |
+        <p>Zanim zaczniemy, dostosuj głośność swojego urządzenia odtwarzającego do komfortowego poziomu.</p>
+        <p>Odtwórz poniższą próbkę audio i ustaw suwak głośności. To ustawienie będzie używane przez resztę testu.</p>
+      stimulus: configs/resources/audio/mono_ref.wav # Using a standard file for volume setting
+      defaultVolume: 0.5
+
+    # --- 4. Training Section ---
+    - type: generic
+      id: training_info
+      name: Sesja treningowa
+      content: |
+        <p>Kolejna strona to sesja treningowa, która pozwoli Ci zapoznać się z interfejsem.</p>
+        <p>Twoim zadaniem jest ocena jakości próbek względem jawnego Wzorca. Wśród testowanych nagrań znajdują się:</p>
+        <p>NASZ MODEL</p>
+        <p>MODEL PORÓWNAWCZY</p>
+        <p>KOTWICA (NISKA JAKOŚĆ)</p>
+        <p>UKRYTY ORYGINAŁ</p>
+        <p>Użyj suwaków, aby ocenić podobieństwo do Wzorca. Wynik 100 oznacza brzmienie identyczne z oryginałem.</p>
+
+    - type: mushra
+      id: training_trial
+      name: Trening MUSHRA
+      content: To jest próba treningowa. Nazwy warunków (w tym Wzorca) są widoczne.
+      showWaveform: true
+      enableLooping: true
+      # For training, we show the condition names and don't randomize them
+      randomize: false
+      showConditionNames: true
+      reference: configs/resources/audio/mono_ref.wav
+      createAnchor35: true # Automatically create a low-quality anchor for training
+      stimuli:
+        "Synteza 1": configs/resources/audio/mono_c1.wav                  │
+        "Synteza 2": configs/resources/audio/mono_c2.wav
+
+    # --- 5. Start of the Actual Test ---
+    - type: generic
+      id: test_start_info
+      name: Test wkrótce się rozpocznie
+      content: <p>Trening został zakończony. Teraz rozpocznie się właściwy test. Powodzenia!</p>
+
+    # --- 6. TTS MUSHRA Trials ---
+    # You can copy and paste this block for each sentence/sample you want to test.
+    - type: mushra
+      id: trial_1
+      name: Ocena - Próbka 1
+      content: Proszę ocenić jakość dźwięku próbek.
+      # showWaveform: true
+      enableLooping: true
+      reference: configs/resources/audio/hidden_original/PF_0_emo.wav
+      createAnchor35: true
+      stimuli:
+          OurModel: configs/resources/audio/our_model/PF_0_emo.wav
+          OtherModel: configs/resources/audio/anchor/PF_0_emo_anchor.wav
+
+    - type: mushra
+      id: trial_2
+      name: Ocena - Próbka 2
+      content: Proszę ocenić jakość dźwięku próbek.
+      showWaveform: true
+      enableLooping: true
+      reference: configs/resources/audio/mono_ref.wav
+      createAnchor35: true
+      stimuli:
+          OurModel: configs/resources/audio/mono_c1.wav
+          OtherModel: configs/resources/audio/mono_c2.wav
+
+    # --- 7. Finish Page with Questionnaire ---
+    - type: finish
+      id: finish
+      name: Dziękujemy!
+      content: Dziękujemy za udział w tym teście odsłuchowym!
+      showResults: false # Hides the detailed results from the participant
+      writeResults: true
+      questionnaire:
+          - type: number
+            label: Proszę podać swój wiek
+            name: age
+            optional: true
+            min: 1
+            max: 100
+          - type: long_text
+            label: Czy masz dla nas jakieś inne uwagi?
+            name: feedback
+            optional: true
