@@ -54,7 +54,7 @@ pages:
         <hr>
         <p>Kolejna strona to <strong>sesja treningowa</strong>, która pozwoli Ci zapoznać się z interfejsem. Będziesz w niej oceniać jakość nagrań względem jawnego <strong>Wzorca</strong>.</p>
         <p>Wśród testowanych próbek znajdą się:</p>
-        <p>>Nasz Model</p>
+        <p>Nasz Model</p>
         <p>Model Porównawczy</p>
         <p>Kotwica (niska jakość)</p>
         <p>Ukryty Oryginał</p>
@@ -83,29 +83,8 @@ pages:
 
     # --- 6. TTS MUSHRA Trials ---
     # You can copy and paste this block for each sentence/sample you want to test.
-    - type: mushra
-      id: trial_1
-      name: Ocena - Próbka 1
-      content: Proszę ocenić jakość dźwięku próbek. Użyj suwaków, aby ocenić podobieństwo do <strong>Wzorca</strong>. Wynik <strong>100</strong> oznacza brzmienie identyczne z oryginałem.
-      showWaveform: false
-      enableLooping: true
-      reference: configs/resources/audio/mono_ref.wav
-      createAnchor35: true
-      stimuli:
-          OurModel: configs/resources/audio/mono_c1.wav
-          OtherModel: configs/resources/audio/mono_c2.wav
 
-    - type: mushra
-      id: trial_2
-      name: Ocena - Próbka 2
-      content: Proszę ocenić jakość dźwięku próbek. Użyj suwaków, aby ocenić podobieństwo do <strong>Wzorca</strong>. Wynik <strong>100</strong> oznacza brzmienie identyczne z oryginałem.
-      showWaveform: false
-      enableLooping: true
-      reference: configs/resources/audio/mono_ref.wav
-      createAnchor35: true
-      stimuli:
-          OurModel: configs/resources/audio/mono_c1.wav
-          OtherModel: configs/resources/audio/mono_c2.wav
+    # PASTE RESULT FROM ./generate_trials.sh
 
     # --- 7. Finish Page with Questionnaire ---
     - type: finish
