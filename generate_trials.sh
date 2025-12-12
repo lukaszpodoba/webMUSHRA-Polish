@@ -9,7 +9,6 @@ AUDIO_BASE_PATH="configs/resources/audio"
 HIDDEN_ORIGINAL_DIR="${AUDIO_BASE_PATH}/hidden_original"
 OUR_MODEL_DIR="${AUDIO_BASE_PATH}/our_model"
 OTHER_MODEL_DIR="${AUDIO_BASE_PATH}/other_model"
-OTHER_MODEL_2_DIR="${AUDIO_BASE_PATH}/other_model_2"
 
 # Check if the reference directory exists
 if [ ! -d "$HIDDEN_ORIGINAL_DIR" ]; then
@@ -34,7 +33,6 @@ for ref_file_path in "$HIDDEN_ORIGINAL_DIR"/*.wav; do
   # Construct the paths for the other stimuli
   our_model_file="${OUR_MODEL_DIR}/${ref_filename}"
   other_model_file="${OTHER_MODEL_DIR}/${ref_filename}"
-  other_model_2_file="${OTHER_MODEL_2_DIR}/${ref_filename}"
 
   # Check if the corresponding files exist
   if [ ! -f "$our_model_file" ]; then
@@ -43,10 +41,6 @@ for ref_file_path in "$HIDDEN_ORIGINAL_DIR"/*.wav; do
   fi
   if [ ! -f "$other_model_file" ]; then
     echo "Warning: Corresponding file for '$ref_filename' not found in '$OTHER_MODEL_DIR'. Skipping."
-    continue
-  fi
-  if [ ! -f "$other_model_2_file" ]; then
-    echo "Warning: Corresponding file for '$ref_filename' not found in '$OTHER_MODEL_2_DIR'. Skipping."
     continue
   fi
 
@@ -63,7 +57,6 @@ for ref_file_path in "$HIDDEN_ORIGINAL_DIR"/*.wav; do
       stimuli:
           OurModel: ${our_model_file}
           OtherModel: ${other_model_file}
-          OtherModel2: ${other_model_2_file}
 EOF
 
   COUNTER=$((COUNTER + 1))
