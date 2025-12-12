@@ -25,7 +25,7 @@ pages:
       mustConsent: true # User must agree to continue
       content: |
         <p>Za chwilę weźmiesz udział w teście odsłuchowym w celach badawczych.</p>
-        <p>Twoje anonimowe odpowiedzi (w tym wiek i płeć zebrane na końcu eksperymentu) zostaną zebrane i wykorzystane do oceny jakości dźwięku.</p>
+        <p>Twoje anonimowe odpowiedzi (w tym wiek i płeć zebrane na końcu eksperymentu) zostaną wykorzystane do oceny jakości dźwięku.</p>
         <p>Klikając "Zgadzam się", potwierdzasz, że przeczytałeś/aś i zrozumiałeś/aś te informacje oraz wyrażasz zgodę na udział w badaniu.</p>
 
     # --- 3. Volume Adjustment Page ---
@@ -84,7 +84,336 @@ pages:
     # --- 6. TTS MUSHRA Trials ---
     # You can copy and paste this block for each sentence/sample you want to test.
 
-    # PASTE RESULT FROM ./generate_trials.sh
+    - type: mushra
+      id: trial_1
+      name: Ocena - Próbka 1
+      content: Proszę ocenić jakość dźwięku próbek. Użyj suwaków, aby ocenić podobieństwo do <strong>Wzorca</strong>. Wynik <strong>100</strong> oznacza brzmienie identyczne z oryginałem.
+      showWaveform: false
+      enableLooping: true
+      reference: configs/resources/audio/hidden_original/01_neutral_PF_9.wav
+      createAnchor35: true
+      stimuli:
+          OurModel: configs/resources/audio/our_model/01_neutral_PF_9.wav
+          OtherModel: configs/resources/audio/other_model/01_neutral_PF_9.wav
+    - type: mushra
+      id: trial_2
+      name: Ocena - Próbka 2
+      content: Proszę ocenić jakość dźwięku próbek. Użyj suwaków, aby ocenić podobieństwo do <strong>Wzorca</strong>. Wynik <strong>100</strong> oznacza brzmienie identyczne z oryginałem.
+      showWaveform: false
+      enableLooping: true
+      reference: configs/resources/audio/hidden_original/02_neutral_PF_8.wav
+      createAnchor35: true
+      stimuli:
+          OurModel: configs/resources/audio/our_model/02_neutral_PF_8.wav
+          OtherModel: configs/resources/audio/other_model/02_neutral_PF_8.wav
+    - type: mushra
+      id: trial_3
+      name: Ocena - Próbka 3
+      content: Proszę ocenić jakość dźwięku próbek. Użyj suwaków, aby ocenić podobieństwo do <strong>Wzorca</strong>. Wynik <strong>100</strong> oznacza brzmienie identyczne z oryginałem.
+      showWaveform: false
+      enableLooping: true
+      reference: configs/resources/audio/hidden_original/03_neutral_PF_7.wav
+      createAnchor35: true
+      stimuli:
+          OurModel: configs/resources/audio/our_model/03_neutral_PF_7.wav
+          OtherModel: configs/resources/audio/other_model/03_neutral_PF_7.wav
+    - type: mushra
+      id: trial_4
+      name: Ocena - Próbka 4
+      content: Proszę ocenić jakość dźwięku próbek. Użyj suwaków, aby ocenić podobieństwo do <strong>Wzorca</strong>. Wynik <strong>100</strong> oznacza brzmienie identyczne z oryginałem.
+      showWaveform: false
+      enableLooping: true
+      reference: configs/resources/audio/hidden_original/04_neutral_PF_6.wav
+      createAnchor35: true
+      stimuli:
+          OurModel: configs/resources/audio/our_model/04_neutral_PF_6.wav
+          OtherModel: configs/resources/audio/other_model/04_neutral_PF_6.wav
+    - type: mushra
+      id: trial_5
+      name: Ocena - Próbka 5
+      content: Proszę ocenić jakość dźwięku próbek. Użyj suwaków, aby ocenić podobieństwo do <strong>Wzorca</strong>. Wynik <strong>100</strong> oznacza brzmienie identyczne z oryginałem.
+      showWaveform: false
+      enableLooping: true
+      reference: configs/resources/audio/hidden_original/05_neutral_PF_5.wav
+      createAnchor35: true
+      stimuli:
+          OurModel: configs/resources/audio/our_model/05_neutral_PF_5.wav
+          OtherModel: configs/resources/audio/other_model/05_neutral_PF_5.wav
+    - type: mushra
+      id: trial_6
+      name: Ocena - Próbka 6
+      content: Proszę ocenić jakość dźwięku próbek. Użyj suwaków, aby ocenić podobieństwo do <strong>Wzorca</strong>. Wynik <strong>100</strong> oznacza brzmienie identyczne z oryginałem.
+      showWaveform: false
+      enableLooping: true
+      reference: configs/resources/audio/hidden_original/06_neutral_PF_4.wav
+      createAnchor35: true
+      stimuli:
+          OurModel: configs/resources/audio/our_model/06_neutral_PF_4.wav
+          OtherModel: configs/resources/audio/other_model/06_neutral_PF_4.wav
+    - type: mushra
+      id: trial_7
+      name: Ocena - Próbka 7
+      content: Proszę ocenić jakość dźwięku próbek. Użyj suwaków, aby ocenić podobieństwo do <strong>Wzorca</strong>. Wynik <strong>100</strong> oznacza brzmienie identyczne z oryginałem.
+      showWaveform: false
+      enableLooping: true
+      reference: configs/resources/audio/hidden_original/07_neutral_PF_3.wav
+      createAnchor35: true
+      stimuli:
+          OurModel: configs/resources/audio/our_model/07_neutral_PF_3.wav
+          OtherModel: configs/resources/audio/other_model/07_neutral_PF_3.wav
+    - type: mushra
+      id: trial_8
+      name: Ocena - Próbka 8
+      content: Proszę ocenić jakość dźwięku próbek. Użyj suwaków, aby ocenić podobieństwo do <strong>Wzorca</strong>. Wynik <strong>100</strong> oznacza brzmienie identyczne z oryginałem.
+      showWaveform: false
+      enableLooping: true
+      reference: configs/resources/audio/hidden_original/08_neutral_PF_2.wav
+      createAnchor35: true
+      stimuli:
+          OurModel: configs/resources/audio/our_model/08_neutral_PF_2.wav
+          OtherModel: configs/resources/audio/other_model/08_neutral_PF_2.wav
+    - type: mushra
+      id: trial_9
+      name: Ocena - Próbka 9
+      content: Proszę ocenić jakość dźwięku próbek. Użyj suwaków, aby ocenić podobieństwo do <strong>Wzorca</strong>. Wynik <strong>100</strong> oznacza brzmienie identyczne z oryginałem.
+      showWaveform: false
+      enableLooping: true
+      reference: configs/resources/audio/hidden_original/09_neutral_PF_1.wav
+      createAnchor35: true
+      stimuli:
+          OurModel: configs/resources/audio/our_model/09_neutral_PF_1.wav
+          OtherModel: configs/resources/audio/other_model/09_neutral_PF_1.wav
+    - type: mushra
+      id: trial_10
+      name: Ocena - Próbka 10
+      content: Proszę ocenić jakość dźwięku próbek. Użyj suwaków, aby ocenić podobieństwo do <strong>Wzorca</strong>. Wynik <strong>100</strong> oznacza brzmienie identyczne z oryginałem.
+      showWaveform: false
+      enableLooping: true
+      reference: configs/resources/audio/hidden_original/10_neutral_PF_0.wav
+      createAnchor35: true
+      stimuli:
+          OurModel: configs/resources/audio/our_model/10_neutral_PF_0.wav
+          OtherModel: configs/resources/audio/other_model/10_neutral_PF_0.wav
+    - type: mushra
+      id: trial_11
+      name: Ocena - Próbka 11
+      content: Proszę ocenić jakość dźwięku próbek. Użyj suwaków, aby ocenić podobieństwo do <strong>Wzorca</strong>. Wynik <strong>100</strong> oznacza brzmienie identyczne z oryginałem.
+      showWaveform: false
+      enableLooping: true
+      reference: configs/resources/audio/hidden_original/11_emo_PF_9.wav
+      createAnchor35: true
+      stimuli:
+          OurModel: configs/resources/audio/our_model/11_emo_PF_9.wav
+          OtherModel: configs/resources/audio/other_model/11_emo_PF_9.wav
+    - type: mushra
+      id: trial_12
+      name: Ocena - Próbka 12
+      content: Proszę ocenić jakość dźwięku próbek. Użyj suwaków, aby ocenić podobieństwo do <strong>Wzorca</strong>. Wynik <strong>100</strong> oznacza brzmienie identyczne z oryginałem.
+      showWaveform: false
+      enableLooping: true
+      reference: configs/resources/audio/hidden_original/12_emo_PF_8.wav
+      createAnchor35: true
+      stimuli:
+          OurModel: configs/resources/audio/our_model/12_emo_PF_8.wav
+          OtherModel: configs/resources/audio/other_model/12_emo_PF_8.wav
+    - type: mushra
+      id: trial_13
+      name: Ocena - Próbka 13
+      content: Proszę ocenić jakość dźwięku próbek. Użyj suwaków, aby ocenić podobieństwo do <strong>Wzorca</strong>. Wynik <strong>100</strong> oznacza brzmienie identyczne z oryginałem.
+      showWaveform: false
+      enableLooping: true
+      reference: configs/resources/audio/hidden_original/13_emo_PF_7.wav
+      createAnchor35: true
+      stimuli:
+          OurModel: configs/resources/audio/our_model/13_emo_PF_7.wav
+          OtherModel: configs/resources/audio/other_model/13_emo_PF_7.wav
+    - type: mushra
+      id: trial_14
+      name: Ocena - Próbka 14
+      content: Proszę ocenić jakość dźwięku próbek. Użyj suwaków, aby ocenić podobieństwo do <strong>Wzorca</strong>. Wynik <strong>100</strong> oznacza brzmienie identyczne z oryginałem.
+      showWaveform: false
+      enableLooping: true
+      reference: configs/resources/audio/hidden_original/14_emo_PF_6.wav
+      createAnchor35: true
+      stimuli:
+          OurModel: configs/resources/audio/our_model/14_emo_PF_6.wav
+          OtherModel: configs/resources/audio/other_model/14_emo_PF_6.wav
+    - type: mushra
+      id: trial_15
+      name: Ocena - Próbka 15
+      content: Proszę ocenić jakość dźwięku próbek. Użyj suwaków, aby ocenić podobieństwo do <strong>Wzorca</strong>. Wynik <strong>100</strong> oznacza brzmienie identyczne z oryginałem.
+      showWaveform: false
+      enableLooping: true
+      reference: configs/resources/audio/hidden_original/15_emo_PF_5.wav
+      createAnchor35: true
+      stimuli:
+          OurModel: configs/resources/audio/our_model/15_emo_PF_5.wav
+          OtherModel: configs/resources/audio/other_model/15_emo_PF_5.wav
+    - type: mushra
+      id: trial_16
+      name: Ocena - Próbka 16
+      content: Proszę ocenić jakość dźwięku próbek. Użyj suwaków, aby ocenić podobieństwo do <strong>Wzorca</strong>. Wynik <strong>100</strong> oznacza brzmienie identyczne z oryginałem.
+      showWaveform: false
+      enableLooping: true
+      reference: configs/resources/audio/hidden_original/16_emo_PF_4.wav
+      createAnchor35: true
+      stimuli:
+          OurModel: configs/resources/audio/our_model/16_emo_PF_4.wav
+          OtherModel: configs/resources/audio/other_model/16_emo_PF_4.wav
+    - type: mushra
+      id: trial_17
+      name: Ocena - Próbka 17
+      content: Proszę ocenić jakość dźwięku próbek. Użyj suwaków, aby ocenić podobieństwo do <strong>Wzorca</strong>. Wynik <strong>100</strong> oznacza brzmienie identyczne z oryginałem.
+      showWaveform: false
+      enableLooping: true
+      reference: configs/resources/audio/hidden_original/17_emo_PF_3.wav
+      createAnchor35: true
+      stimuli:
+          OurModel: configs/resources/audio/our_model/17_emo_PF_3.wav
+          OtherModel: configs/resources/audio/other_model/17_emo_PF_3.wav
+    - type: mushra
+      id: trial_18
+      name: Ocena - Próbka 18
+      content: Proszę ocenić jakość dźwięku próbek. Użyj suwaków, aby ocenić podobieństwo do <strong>Wzorca</strong>. Wynik <strong>100</strong> oznacza brzmienie identyczne z oryginałem.
+      showWaveform: false
+      enableLooping: true
+      reference: configs/resources/audio/hidden_original/18_emo_PF_2.wav
+      createAnchor35: true
+      stimuli:
+          OurModel: configs/resources/audio/our_model/18_emo_PF_2.wav
+          OtherModel: configs/resources/audio/other_model/18_emo_PF_2.wav
+    - type: mushra
+      id: trial_19
+      name: Ocena - Próbka 19
+      content: Proszę ocenić jakość dźwięku próbek. Użyj suwaków, aby ocenić podobieństwo do <strong>Wzorca</strong>. Wynik <strong>100</strong> oznacza brzmienie identyczne z oryginałem.
+      showWaveform: false
+      enableLooping: true
+      reference: configs/resources/audio/hidden_original/19_emo_PF_1.wav
+      createAnchor35: true
+      stimuli:
+          OurModel: configs/resources/audio/our_model/19_emo_PF_1.wav
+          OtherModel: configs/resources/audio/other_model/19_emo_PF_1.wav
+    - type: mushra
+      id: trial_20
+      name: Ocena - Próbka 20
+      content: Proszę ocenić jakość dźwięku próbek. Użyj suwaków, aby ocenić podobieństwo do <strong>Wzorca</strong>. Wynik <strong>100</strong> oznacza brzmienie identyczne z oryginałem.
+      showWaveform: false
+      enableLooping: true
+      reference: configs/resources/audio/hidden_original/20_emo_PF_0.wav
+      createAnchor35: true
+      stimuli:
+          OurModel: configs/resources/audio/our_model/20_emo_PF_0.wav
+          OtherModel: configs/resources/audio/other_model/20_emo_PF_0.wav
+    - type: mushra
+      id: trial_21
+      name: Ocena - Próbka 21
+      content: Proszę ocenić jakość dźwięku próbek. Użyj suwaków, aby ocenić podobieństwo do <strong>Wzorca</strong>. Wynik <strong>100</strong> oznacza brzmienie identyczne z oryginałem.
+      showWaveform: false
+      enableLooping: true
+      reference: configs/resources/audio/hidden_original/21_b_XD_9.wav
+      createAnchor35: true
+      stimuli:
+          OurModel: configs/resources/audio/our_model/21_b_XD_9.wav
+          OtherModel: configs/resources/audio/other_model/21_b_XD_9.wav
+    - type: mushra
+      id: trial_22
+      name: Ocena - Próbka 22
+      content: Proszę ocenić jakość dźwięku próbek. Użyj suwaków, aby ocenić podobieństwo do <strong>Wzorca</strong>. Wynik <strong>100</strong> oznacza brzmienie identyczne z oryginałem.
+      showWaveform: false
+      enableLooping: true
+      reference: configs/resources/audio/hidden_original/22_b_XD_8.wav
+      createAnchor35: true
+      stimuli:
+          OurModel: configs/resources/audio/our_model/22_b_XD_8.wav
+          OtherModel: configs/resources/audio/other_model/22_b_XD_8.wav
+    - type: mushra
+      id: trial_23
+      name: Ocena - Próbka 23
+      content: Proszę ocenić jakość dźwięku próbek. Użyj suwaków, aby ocenić podobieństwo do <strong>Wzorca</strong>. Wynik <strong>100</strong> oznacza brzmienie identyczne z oryginałem.
+      showWaveform: false
+      enableLooping: true
+      reference: configs/resources/audio/hidden_original/23_b_XD_7.wav
+      createAnchor35: true
+      stimuli:
+          OurModel: configs/resources/audio/our_model/23_b_XD_7.wav
+          OtherModel: configs/resources/audio/other_model/23_b_XD_7.wav
+    - type: mushra
+      id: trial_24
+      name: Ocena - Próbka 24
+      content: Proszę ocenić jakość dźwięku próbek. Użyj suwaków, aby ocenić podobieństwo do <strong>Wzorca</strong>. Wynik <strong>100</strong> oznacza brzmienie identyczne z oryginałem.
+      showWaveform: false
+      enableLooping: true
+      reference: configs/resources/audio/hidden_original/24_b_XD_6.wav
+      createAnchor35: true
+      stimuli:
+          OurModel: configs/resources/audio/our_model/24_b_XD_6.wav
+          OtherModel: configs/resources/audio/other_model/24_b_XD_6.wav
+    - type: mushra
+      id: trial_25
+      name: Ocena - Próbka 25
+      content: Proszę ocenić jakość dźwięku próbek. Użyj suwaków, aby ocenić podobieństwo do <strong>Wzorca</strong>. Wynik <strong>100</strong> oznacza brzmienie identyczne z oryginałem.
+      showWaveform: false
+      enableLooping: true
+      reference: configs/resources/audio/hidden_original/25_b_XD_5.wav
+      createAnchor35: true
+      stimuli:
+          OurModel: configs/resources/audio/our_model/25_b_XD_5.wav
+          OtherModel: configs/resources/audio/other_model/25_b_XD_5.wav
+    - type: mushra
+      id: trial_26
+      name: Ocena - Próbka 26
+      content: Proszę ocenić jakość dźwięku próbek. Użyj suwaków, aby ocenić podobieństwo do <strong>Wzorca</strong>. Wynik <strong>100</strong> oznacza brzmienie identyczne z oryginałem.
+      showWaveform: false
+      enableLooping: true
+      reference: configs/resources/audio/hidden_original/26_b_XD_4.wav
+      createAnchor35: true
+      stimuli:
+          OurModel: configs/resources/audio/our_model/26_b_XD_4.wav
+          OtherModel: configs/resources/audio/other_model/26_b_XD_4.wav
+    - type: mushra
+      id: trial_27
+      name: Ocena - Próbka 27
+      content: Proszę ocenić jakość dźwięku próbek. Użyj suwaków, aby ocenić podobieństwo do <strong>Wzorca</strong>. Wynik <strong>100</strong> oznacza brzmienie identyczne z oryginałem.
+      showWaveform: false
+      enableLooping: true
+      reference: configs/resources/audio/hidden_original/27_b_XD_3.wav
+      createAnchor35: true
+      stimuli:
+          OurModel: configs/resources/audio/our_model/27_b_XD_3.wav
+          OtherModel: configs/resources/audio/other_model/27_b_XD_3.wav
+    - type: mushra
+      id: trial_28
+      name: Ocena - Próbka 28
+      content: Proszę ocenić jakość dźwięku próbek. Użyj suwaków, aby ocenić podobieństwo do <strong>Wzorca</strong>. Wynik <strong>100</strong> oznacza brzmienie identyczne z oryginałem.
+      showWaveform: false
+      enableLooping: true
+      reference: configs/resources/audio/hidden_original/28_b_XD_2.wav
+      createAnchor35: true
+      stimuli:
+          OurModel: configs/resources/audio/our_model/28_b_XD_2.wav
+          OtherModel: configs/resources/audio/other_model/28_b_XD_2.wav
+    - type: mushra
+      id: trial_29
+      name: Ocena - Próbka 29
+      content: Proszę ocenić jakość dźwięku próbek. Użyj suwaków, aby ocenić podobieństwo do <strong>Wzorca</strong>. Wynik <strong>100</strong> oznacza brzmienie identyczne z oryginałem.
+      showWaveform: false
+      enableLooping: true
+      reference: configs/resources/audio/hidden_original/29_b_XD_1.wav
+      createAnchor35: true
+      stimuli:
+          OurModel: configs/resources/audio/our_model/29_b_XD_1.wav
+          OtherModel: configs/resources/audio/other_model/29_b_XD_1.wav
+    - type: mushra
+      id: trial_30
+      name: Ocena - Próbka 30
+      content: Proszę ocenić jakość dźwięku próbek. Użyj suwaków, aby ocenić podobieństwo do <strong>Wzorca</strong>. Wynik <strong>100</strong> oznacza brzmienie identyczne z oryginałem.
+      showWaveform: false
+      enableLooping: true
+      reference: configs/resources/audio/hidden_original/30_b_XD_0.wav
+      createAnchor35: true
+      stimuli:
+          OurModel: configs/resources/audio/our_model/30_b_XD_0.wav
+          OtherModel: configs/resources/audio/other_model/30_b_XD_0.wav
 
     # --- 7. Finish Page with Questionnaire ---
     - type: finish
